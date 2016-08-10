@@ -1,0 +1,37 @@
+npm install react
+npm install node
+npm install react-dom
+npm install -g browserify
+npm install --save-dev babel-cli
+
+
+
+  // "dependencies": {
+  //   "primus": "*",
+  //   "async": "~0.8.0",
+  //   "express": "4.2.x",
+  //   "winston": "git://github.com/flatiron/winston#master",
+  //   "bigpipe": "bigpipe/pagelet",
+  //   "plates": "https://github.com/flatiron/plates/tarball/master"
+  // },
+  // "devDependencies": {
+  //   "vows": "^0.7.0",
+  //   "assume": "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
+  //   "pre-commit": "*"
+  //}
+
+
+new webpack.DefinePlugin({
+  "process.env": {
+    NODE_ENV: JSON.stringify("production")
+  }
+});
+
+
+browserify -t [ babelify ] main.js -o bundle.js
+
+
+
+TUTORIAL
+
+https://www.youtube.com/watch?v=MhkGQAoc7bc
